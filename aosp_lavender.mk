@@ -8,8 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Proton stuff
-$(call inherit-product, vendor/proton/build/common.mk)
+# Inherit vendor
+$(call inherit-product, vendor/aosp/common.mk)
 
 # Inherit from lavender device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -26,3 +26,23 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="lavender" \
     PRODUCT_NAME="lavender"
+
+###-------Arcana------###
+
+# Me
+ARCANA_MAINTAINER := Mayur
+
+# Quick tap feature
+TARGET_SUPPORTS_QUICK_TAP := true
+
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Bloom and Living Universe Pixel Wallpapers
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+
+# Pixel Now playing feature
+TARGET_SUPPORTS_NOW_PLAYING := true
+
+# GAPPS
+WITH_GAPPS := true # fuck vanilla users [laughs in demonic way]
